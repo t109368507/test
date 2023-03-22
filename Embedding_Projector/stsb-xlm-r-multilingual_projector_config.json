@@ -6,8 +6,8 @@
         30,
         768
       ],
-      "tensorPath": "https://github.com/t109368507/test/blob/main/output_bible.tsv",
-      "metadataPath": "https://github.com/t109368507/test/blob/main/metadata_bible.tsv"
+      "tensorPath": "https://raw.githubusercontent.com/t109368507/test/main/Embedding_Projector/output_bible_stsb-xlm-r-multilingual.tsv",
+      "metadataPath": "https://raw.githubusercontent.com/t109368507/test/main/Embedding_Projector/metadata_bible_stsb-xlm-r-multilingual.tsv"
     }
   ]
 }
