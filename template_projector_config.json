@@ -1,0 +1,13 @@
+{
+  "embeddings": [
+    {
+      "tensorName": "bible tensor",
+      "tensorShape": [
+        30,
+        768
+      ],
+      "tensorPath": "https://github.com/t109368507/test/blob/main/output_bible.tsv",
+      "metadataPath": "https://github.com/t109368507/test/blob/main/metadata_bible.tsv"
+    }
+  ]
+}
