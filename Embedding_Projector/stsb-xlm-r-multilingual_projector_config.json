@@ -1,7 +1,7 @@
 {
   "embeddings": [
     {
-      "tensorName": "bible tensor",
+      "tensorName": "bible tensor stsb-xlm-r-multilingual",
       "tensorShape": [
         30,
         768
