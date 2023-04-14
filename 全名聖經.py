@@ -54,17 +54,28 @@ for _dirs in dirs:
                     index=index+1
             index=0
             # print(_line)
-            line_all = line_all + "".join(_line) + '\n'
+            line_all = line_all + " ".join(_line) + '\n'
 
             # print(line)
             if line_number==0:
                 # line_tl = line_tl + "".join(_line) + '\t' + '[' + _files[0] + ']' +'\n'
-                line_tl = line_tl + "".join(_line) +'\n'
+                line_tl = line_tl + " ".join(_line) +'\n'
                 # print(line_tl)
                 line_number=1
             elif line_number==1:
+                s1 = []
+                count = 0
+                for i in _line:
+                    s1.append(i)
+                    count += 1
+                    if count == len(_line):
+                        continue
+                    s1.append(' ')
+
+                _line = s1
+
                 # line_zh = line_zh + "".join(_line) + '\t' + '[' + _files[0] + ']' +'\n'
-                line_zh = line_zh + "".join(_line) +'\n'
+                line_zh = line_zh + " ".join(_line) +'\n'
                 line_number=0
 
         line_number=0
