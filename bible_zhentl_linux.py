@@ -29,7 +29,7 @@ is_zh_exist = False
 
 line_number=0
 
-characters = "”-－！\"':!?[]()“「」？（）：﹙﹚‘、；;…"  # 過濾半形全形符>號
+characters = "”－！\"':!?[]()“「」？（）：﹙﹚‘、；;…"  # 過濾半形全形符>號
 split_characters = "。,，."
 
 # if os.path.isfile(outfile_zh):
@@ -62,7 +62,7 @@ for _dirs in dirs:
     with open(DIR_PATH +"/"+ _dirs + "/" + _files[findex], "r", encoding='utf-8') as f:
         for _line in f.readlines():
             for x in range(len(characters)):
-                _line = _line.replace(characters[x], " ")
+                _line = _line.replace(characters[x], "")
 
             _line = _line.strip()
             _line = re.findall(".{1}", _line)
@@ -85,8 +85,8 @@ for _dirs in dirs:
                     count += 1
                     if count == len(_line):
                         continue
-                    if i == ',' or i == '。' or i == '.':
-                        s1.append('\n')
+                    #if i == ',':
+                    #    s1.append('\n')
 
                 _line = s1
                 # line_tl = line_tl + "".join(_line) + '\t' + '[' + _files[0] + ']' +'\n'
@@ -101,14 +101,14 @@ for _dirs in dirs:
                     count += 1
                     if count == len(_line):
                         continue
-                    s1.append(' ')
+                    s1.append('')
                     
-                    if i == ',' or i == '。' or i == '.':
-                        s1.append('\n')
+                    #if i == '，':
+                    #    s1.append('\n')
                 _line = s1
 
                 # line_zh = line_zh + "".join(_line) + '\t' + '[' + _files[0] + ']' +'\n'
-                line_zh = line_zh + " ".join(_line) +'\n'
+                line_zh = line_zh + "".join(_line) +'\n'
                 line_number=0
 
         line_number=0
