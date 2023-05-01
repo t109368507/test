@@ -16,17 +16,17 @@ tl_zh = 0
 zh_en = 1
 
 # 刪除上次預處理後的檔案
-outfile_zh = "bible.raw.zh"
+outfile_zh = "bible.b.raw.zh"
 outfile_tl = "bible.raw.tl"
-outfile_en = "bible.raw.en"
-outfile_all = "bible.raw.all"
+outfile_en = "bible.b.raw.en"
+outfile_all = "bible.b.raw.all"
 
 is_all_exist = False
 is_zh_exist = False
 
 line_number=0
 
-characters = "”－\"'[]()“「」（）：。,，.？！『』﹙﹚‘、；;…"  # 過濾半形全形符>號
+characters = "”－\"'[]()“「」（）：。,，.？！『』﹙﹚‘、:；;…"  # 過濾半形全形符>號
 split_characters = "。,，."
 
 # if os.path.isfile(outfile_zh):
@@ -54,12 +54,12 @@ for _dirs in dirs:
         for i in range(len(_files)):
             if "tl-zh" in _files[i]:
                 findex = i
-                print(_files[findex])
+                # print(_files[findex])
     if zh_en:
         for i in range(len(_files)):
             if "zh-en" in _files[i]:
                 findex = i
-                print(_files[findex])
+                # print(_files[findex])
 
     with open(DIR_PATH +"\\"+ _dirs + "\\" + _files[findex], "r", encoding='utf-8') as f:
         for _line in f.readlines():
@@ -97,13 +97,13 @@ for _dirs in dirs:
                 _line = s1
                 # line_tl = line_tl + "".join(_line) + '\t' + '[' + _files[0] + ']' +'\n'
                 if tl_zh:
-                    line_tl = line_tl + "".join(_line) + '\t' + '[' + _files[findex] + ']' + '\n'
-                    # line_tl = line_tl + "".join(_line) +'\n'
+                    # line_tl = line_tl + "".join(_line) + '\t' + '[' + _files[findex] + ']' + '\n'
+                    line_tl = line_tl + "".join(_line) +'\n'
                     # print(line_tl)
                 if zh_en:
-                    line_en = line_en + "".join(_line) + '\t' + '[' + _files[findex] + ']' + '\n'
-                    # line_en = line_en + "".join(_line) + '\n'
-                    print(line_en)
+                    # line_en = line_en + "".join(_line) + '\t' + '[' + _files[findex] + ']' + '\n'
+                    line_en = line_en + "".join(_line) + '\n'
+                    # print(line_en)
 
                 # line_number=1
                 line_number = 0
